@@ -6,15 +6,13 @@ def sumuoc(x):
         if a > x: return x
         else: return 0
 def ktra(x,y):
-    global a
     a = []
-    for i in range(x,y+1):
-        if sumuoc(i): a += [i]
+    for i in range(x,y+1): if sumuoc(i): a += [i]
     return len(a)
 spacedone = False
 try: 
     spacedone = True
-    fileinput = open('SOPP.inp','r',encoding = 'utf-8')
+    fileinput = open('SOPP.inp',mode = 'r',encoding = 'utf-8')
     x,y = map(int,fileinput.readline().rstrip().replace('\n','').split())
 except FileNotFoundError: print('Không tìm thấy file')
 except FileExistsError: print('File Đầu Vào Bị Lỗi !!')
